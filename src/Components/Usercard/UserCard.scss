@@ -11,12 +11,25 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: 1;
-    
+    transform: perspective(33px) translateZ(-500px) rotateX(60deg);
+    transition: 4s ease-in-out;
+
     & > div {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
+}
+
+.user-profile-card.active {
+    transform: translateZ(10px) rotateX(0);
+    transition: 4s ease-in-out;
+}
+
+.user-profile-card.rotate {
+    transform: rotateY(180deg);
+
+    transition: 2s ease-in-out;
 }
 
 .user-profile-card img {
@@ -42,19 +55,41 @@
         font-size: 1.5em;
     }
 
+    & h2.rotate {
+        transform: rotateY(180deg);
+        transition: 2s ease-out;
+    }
+
     // title
     & p {
         font-size: 1.2em;
         opacity: .8;
         margin: 5px 0;
     }
-
+    
+    & p.rotate {
+        transform: rotateY(-180deg);
+        display: none;
+        transition: 2s ease-out;
+    }
 
     // bio
     & h3 {
         font-size: larger;
         font-weight: 600;
+        transition: 2s ease-out;
     }
+
+    & h3.rotate {
+        transform: rotateY(-180deg);
+        transition: 2s ease-out;
+    }
+
+}
+
+.rotate {
+    transform: rotateY(-180deg);
+    transition: 2s ease-out;
 }
 
 .stats {
