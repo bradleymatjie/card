@@ -9,7 +9,10 @@ export const UserCard = () => {
     const [rotate, setRotate] = useState(false);
 
     useEffect(() => {
-        setloaded(true);
+
+        setTimeout(() => {
+            setloaded(true);
+        }, 2000)
     }, [])
     
 
